@@ -1,3 +1,44 @@
+## JavaScript
+- JavaScript is a Single threaded, Synchronous language client side scripting language.
+
+## var, let and const
+- **var**
+  - In JavaScript, Var, Let, and Const are keywords used to declare variables. Each keyword has its own behavior and scoping rules.
+  - Var is function-scoped, meaning that a variable declared with var inside a function is accessible throughout that entire function.
+  - If Var is declared outside of any function, it becomes globally scoped.
+  - If you declare a variable with Var twice in the same function, the second declaration will overwrite the first.
+
+- **Let**
+  - Let is a keyword used to declare variables in JavaScript, just like Var.
+  - Let is block-scoped, meaning that a variable declared with let inside a block (e.g. a loop, an if statement, or a function) is only accessible within that block.
+  - If you declare a variable with Let twice in the same block, an error will be thrown.
+- **Const**
+  - Const is a keyword used to declare constants in JavaScript. A constant is a variable that cannot be reassigned once it has been initialized.
+  - Like Let, Const is also block-scoped.
+  - When you declare a constant, you must initialize it with a value.
+
+- **Difference between var, let and const**  
+  
+|   **Points**    | **Var** | **Let** | **Const** |
+|-------|---------|--------|-------|
+|**Introduce**| Pre ES2015 | ES2015(ES6) | ES2016(ES6)|
+|**Scope** | Globally scope and function scoped | Globally scope and block scope | Globally scope and block scope|
+|**Hoisting** | Var is hoisted to top of its execution (either global or function) and initialized as undefined. |Let is hoisted to top of its execution (either global or block) and left uninitialized. | Const is hoisted to the top of its execution (either global or block) and left uninitialized.|
+|**Redeclaration within scope** | YES | NO | NO|
+|**Reassigned within scope** | YES | YES | NO |
+
+
+## Scope in JavaScript
+- The scope of a variable is the region of your program in which it is defined. 
+
+**Three types of scope in JavaScript.**
+
+- **Global Scope:** The global scope is accessible from any part of your code, including functions and other scopes. Any variable or function declared outside of a function or block of code is in the global scope. Global variables are accessible from any part of your code, but they can be modified by any part of your code as well, which can lead to unexpected behavior.
+
+- **Local Scope:** Local scope refers to variables or functions that are declared within a function or block of code. These variables and functions are only accessible within that function or block of code. Local scope is important because it prevents naming conflicts between different parts of your code. 
+
+- **Block Scope:** Block scope refers to variables or functions that are declared within a block of code, such as an if statement or a for loop. Block scope was introduced in ES6 with the let and const keywords. Variables declared with let or const are only accessible within the block of code they are declared in. This helps to prevent naming conflicts and can make your code easier to understand and maintain.
+
 ### Data Types
 JavaScript has dynamic types, meaning variables can hold different types of data without explicitly specifying the type:
 
