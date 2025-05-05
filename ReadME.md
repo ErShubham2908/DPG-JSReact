@@ -399,7 +399,7 @@ increment(); // Count: 3
 
 ```
 
-**2. Hpisting:** Hoisting is JavaScript’s default behavior of moving declarations (variables and functions) to the top of their scope before code execution.
+**2. Hoisting:** Hoisting is JavaScript’s default behavior of moving declarations (variables and functions) to the top of their scope before code execution.
 - Only declarations are hoisted, not initializations.
 - **Note:** let and const are not hoisted the same way:
 ```
@@ -424,38 +424,75 @@ function sayHello() {
 - An Array in JavaScript is a data structure used to store multiple values in a single variable.
 - It can hold elements of any data type (numbers, strings, objects, functions, etc.).
 - **Array Method**
-  - Push: Adds one or more elements to the end of the array. 
+  - **Push:** Adds one or more elements to the end of the array. 
     - Syntax `array.push(element1, element2);`
-  - Pop: Removes the last element from the array.
+  - **Pop:** Removes the last element from the array.
     - Syntax:  `array.pop()`
-  - length: Returns the number of elements in the array.
+  - **length:** Returns the number of elements in the array.
     - Syntax `array.length`
-  - Join:  creates and returns a new string by concatenating all elements of an array, separated by a specified separator.
+  - **Join:**  creates and returns a new string by concatenating all elements of an array, separated by a specified separator.
     - Ex- `let fruits = ["Apple", "Banana", "Mango"]; let result = fruits.join(" - "); console.log(result); // "Apple - Banana - Mango"`
-  - Includes: checks if the array contains a specific value. Returns true or false.
+  - **Includes:** checks if the array contains a specific value. Returns true or false.
     - Ex- `let colors = ["Red", "Green", "Blue"]; console.log(colors.includes("Green")); // true console.log(colors.includes("Purple")); // false`
-  - Sort:  sorts the elements of an array in place and returns the sorted array. By default, it sorts alphabetically (as strings).
+  - **Sort:**  sorts the elements of an array in place and returns the sorted array. By default, it sorts alphabetically (as strings).
     - Ex- `let fruits = ["Banana", "Apple", "Mango"]; fruits.sort(); console.log(fruits); // ["Apple", "Banana", "Mango"]`
-  - Fill: Fills all elements in an array with a static value.
+  - **Fill:** Fills all elements in an array with a static value.
     - Syntax `array.fill(value);`
-  - Slice: Returns a shallow copy of a portion of an array.
+  - **Slice:** Returns a shallow copy of a portion of an array.
     - Ex `let fruits = ["Apple", "Banana", "Mango"]; console.log(fruits.slice(0, 2)); // ["Apple", "Banana"]`
-  - Splice: Changes the array by removing, replacing, or adding elements.
+  - **Splice:** Changes the array by removing, replacing, or adding elements.
     - Ex: `let fruits = ["Apple", "Banana", "Mango"]; fruits.splice(1, 2, "Orange"); console.log(fruits); // ["Apple", "Orange", "Mango"]`
     - Here 1 - Start, 2 - deleteCount
-  - Find: Returns the first element that matches the condition.
+  - **Find:** Returns the first element that matches the condition.
     - Ex: `let nums = [10, 20, 30]; let found = nums.find(n => n > 15); console.log(found); // 20`
-  - indexOf: Returns the first index of a given element. Returns -1 if not found.
+  - **indexOf:** Returns the first index of a given element. Returns -1 if not found.
     - Ex: `let colors = ["Red", "Blue", "Green"]; console.log(colors.indexOf("Blue")); // 1 `
-  - Reverse: Reverses the array in place.
+  - **Reverse:** Reverses the array in place.
     - Ex- `let nums = [1, 2, 3]; nums.reverse(); console.log(nums); // [3, 2, 1]`
-  - Shift:  Removes the first element of an array.
+  - **Shift:**  Removes the first element of an array.
     - Ex- `let items = [1, 2, 3]; items.shift(); console.log(items); // [2, 3]`
-  - Unshift: Adds elements to the start of an array.
+  - **Unshift:** Adds elements to the start of an array.
     - Ex- `let items = [2, 3]; items.unshift(1); console.log(items); // [1, 2, 3]`
-  - Map:  Returns a new array by applying a function to each element.
+  - **Map:**  Returns a new array by applying a function to each element.
     - Ex- `let nums = [1, 2, 3]; let doubled = nums.map(n => n * 2); console.log(doubled); // [2, 4, 6]`
-  - Filter: Returns a new array with only elements that match a condition.
+  - **Filter:** Returns a new array with only elements that match a condition.
     - Ex- `let nums = [1, 2, 3, 4]; let even = nums.filter(n => n % 2 === 0); console.log(even); // [2, 4]`
-  - Reduce: Reduces the array to a single value by accumulating results.
+  - **Reduce:** Reduces the array to a single value by accumulating results.
     - Ex- `let nums = [1, 2, 3, 4]; let sum = nums.reduce((acc, curr) => acc + curr, 0); console.log(sum); // 10`
+
+### Math Method
+**1. Math.random():** Generates a random number between 0 (inclusive) and 1 (exclusive).
+```
+let randomNumber = Math.random();
+console.log(randomNumber);
+```
+
+**2. Math.round():** Rounds a number to the nearest integer.
+```
+let roundedNumber = Math.round(3.7);
+console.log(roundedNumber); // Output: 4
+```
+
+**3. Math.floor():** Rounds a number down to the nearest integer.
+```
+let flooredNumber = Math.floor(3.7);
+console.log(flooredNumber); // Output: 3
+```
+
+**4. Math.ceil():** Rounds a number up to the nearest integer.
+```
+let ceiledNumber = Math.ceil(3.2);
+console.log(ceiledNumber); // Output: 4
+```
+
+**5. Math.pow():** Returns the base to the exponent power, that is, `base^exponent`.
+```
+let powerResult = Math.pow(2, 3);
+console.log(powerResult); // Output: 8 (2^3)
+```
+
+**6. Math.sqrt():** Returns the square root of a number.
+```
+let sqrtResult = Math.sqrt(16);
+console.log(sqrtResult); // Output: 4
+```

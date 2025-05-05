@@ -70,8 +70,8 @@ console.log("Hii");
 
 // Operator in JS
 // 1. Arithmetic 
-let a = 10;
-let b = 20;
+// let a = 10;
+// let b = 20;
 
 // console.log(a + b);  // 30
 // console.log(a - b);  // -10
@@ -135,12 +135,12 @@ let b = 20;
 // }
 
 // 2. if... else statements
-let time = 1;
-if(time < 1.15){
-    console.log("Present");
-}else{
-    console.log("Absent");   
-}
+// let time = 1;
+// if(time < 1.15){
+//     console.log("Present");
+// }else{
+//     console.log("Absent");   
+// }
 // 3. else if statements
 
 // let math_marks = Number(prompt("Enter your math Marks..."));
@@ -186,9 +186,9 @@ if(time < 1.15){
 //     // code block to execute
 // }
 
-for(let i = 1 ;  i <= 6 ; i++ ){
-    console.log(i);  
-}
+// for(let i = 1 ;  i <= 6 ; i++ ){
+//     console.log(i);  
+// }
 
 // console.log(1);
 // console.log(2);
