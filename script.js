@@ -1,5 +1,5 @@
 // Abc()
-console.log("Hii");
+// console.log("Hii");
 
 
 // Q. Difference between let, const and var
@@ -196,3 +196,71 @@ console.log("Hii");
 // console.log(4);
 // console.log(5);
 // console.log(6);
+
+// let college = "DPG Degree College";
+// college = "Name"
+
+// const name = "Abc"
+// name = "PQR"
+
+// console.log(college)
+// console.log(name)
+
+
+// Function and Type of function in JS
+
+
+//1. function decleration
+
+function Sum(num1, num2){
+    return num1 + num2
+}
+console.log("Line no 218",Sum(10, 20))  
+
+// function calling
+// let result1 = Sum();
+// console.log("line 215, Sum Function")
+// return "Abc"
+// console.log(num1+num2);
+
+//2.  Function Expression
+
+let result = function Multiply(){
+    console.log("Hi....");
+    return "hello"
+    console.log("Hi....");
+}
+
+// result()
+// console.log(result());
+
+// Arrow Function
+
+let sum = (num1, num2) => num1+num2
+
+console.log(sum(1,2));
+
+// Anonymous function
+// setTimeout(function(){
+//     console.log("Hiiiiiii.........");
+// }, 1000);
+
+// IIFE 
+// (function(){
+
+// })()
+
+// callback function
+
+
+function sayHello(name){
+    console.log("Hello", name);
+}
+
+function callName(callback){
+    const username = "Abc";
+    callback(username)
+}
+
+callName(sayHello)
+// sayHello("Abc")
