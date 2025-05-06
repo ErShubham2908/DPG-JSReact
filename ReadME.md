@@ -460,6 +460,42 @@ function sayHello() {
   - **Reduce:** Reduces the array to a single value by accumulating results.
     - Ex- `let nums = [1, 2, 3, 4]; let sum = nums.reduce((acc, curr) => acc + curr, 0); console.log(sum); // 10`
 
+### Object
+- Represents a collection of key-value pairs (properties and methods).
+- **Object Method:**
+  - **Object.value():** Returns an array of a given object's own enumerable property values.
+```
+let person = {
+  name: "Alice",
+  age: 25,
+  city: "New York"
+};
+console.log(Object.keys(person));
+```
+  - **Object.keys():**  Returns an array of a given object's own enumerable property names.
+```
+let person = {
+  name: "Alice",
+  age: 25,
+  city: "New York"
+};
+console.log(Object.values(person)); 
+```
+  - **Object.assign():** Copies the values of all enumerable own properties from one or more source objects to a target object.
+```
+let person = {
+  name: "Alice",
+  age: 25,
+  city: "New York"
+};
+
+let additionalInfo = { country: "USA", married: false };
+let updatedPerson = Object.assign({}, person, additionalInfo);
+
+console.log(updatedPerson);
+```
+
+
 ### Math Method
 **1. Math.random():** Generates a random number between 0 (inclusive) and 1 (exclusive).
 ```

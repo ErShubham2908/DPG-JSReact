@@ -253,14 +253,14 @@ console.log(sum(1,2));
 // callback function
 
 
-function sayHello(name){
-    console.log("Hello", name);
-}
+// function sayHello(name){
+//     console.log("Hello", name);
+// }
 
-function callName(callback){
-    const username = "Abc";
-    callback(username)
-}
+// function callName(callback){
+//     const username = "Abc";
+//     callback(username)
+// }
 
-callName(sayHello)
+// callName(sayHello)
 // sayHello("Abc")
