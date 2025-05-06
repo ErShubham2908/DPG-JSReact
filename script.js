@@ -212,10 +212,10 @@
 
 //1. function decleration
 
-function Sum(num1, num2){
-    return num1 + num2
-}
-console.log("Line no 218",Sum(10, 20))  
+// function Sum(num1, num2){
+//     return num1 + num2
+// }
+// console.log("Line no 218",Sum(10, 20))  
 
 // function calling
 // let result1 = Sum();
@@ -225,20 +225,20 @@ console.log("Line no 218",Sum(10, 20))
 
 //2.  Function Expression
 
-let result = function Multiply(){
-    console.log("Hi....");
-    return "hello"
-    console.log("Hi....");
-}
+// let result = function Multiply(){
+//     console.log("Hi....");
+//     return "hello"
+//     console.log("Hi....");
+// }
 
 // result()
 // console.log(result());
 
 // Arrow Function
 
-let sum = (num1, num2) => num1+num2
+// let sum = (num1, num2) => num1+num2
 
-console.log(sum(1,2));
+// console.log(sum(1,2));
 
 // Anonymous function
 // setTimeout(function(){
@@ -264,3 +264,135 @@ console.log(sum(1,2));
 
 // callName(sayHello)
 // sayHello("Abc")
+
+function* numberGenerator() {
+    yield 1;
+    yield 2;
+    yield 3;
+  }
+  
+//   const gen = numberGenerator();
+//   console.log(gen.next().value); // 1
+//   console.log(gen.next().value); // 2
+//   console.log(gen.next().value)
+
+// Array - one variable multi value - store data in index form
+
+// const arr = [1,2,3,4,5,6,7,8,9,10]
+// console.log(arr);
+// console.log(arr[6]); //7
+
+// // Method of Array
+// // 1. length
+
+// // console.log(arr.length);
+
+// // 2. Push - 
+// arr.push(15)
+// console.log("Push:",arr);
+
+// // 3. Pop
+// arr.pop();
+// arr.pop();
+// console.log("pop:",arr);
+
+
+//4. Join
+// let fruits = ["Apple", "Banana", "Mango"]; 
+// console.log(fruits);
+
+// let result = fruits.join(" - "); 
+// console.log(result); // "Apple - Banana - Mango"
+
+// 5. includes
+
+// let colors = ["Red", "Green", "Blue"]; 
+// console.log(colors.includes("Green")); // true 
+// console.log(colors.includes("Purple")); // false
+
+// 6. sort
+// let array = [4,3,5,6,7,2,3];
+// let arrC = ["Red", "Green", "Blue"]; 
+
+// console.log(array.sort());
+// console.log(arrC.sort());
+
+
+// 7. fill 
+
+// const arr = new Array(5);
+// arr.fill("Abc")
+// console.log(arr);
+// arr[1] = "Pqr"
+// console.log(arr);
+
+// 8. Slice
+// let fruits = ["Apple", "Banana", "Mango", 2,3, 4,5]; 
+// console.log(fruits.slice(1, 7)); // ["Apple", "Banana"]
+// console.log(fruits);
+
+// 9. Splice 
+// let fruits = ["Apple", "Banana", "Mango", "Graps" ]; 
+// fruits.splice(3, 3, "Orange"); 
+// console.log(fruits); // ["Apple", "Orange", "Mango"]
+
+// 10. find
+// let nums = [10, 30, 20]; 
+// let found = nums.find(n => n > 15); 
+// console.log(found);
+
+// 11. indexOf
+// let colors = ["Red", "Blue", "Green"]; 
+// // console.log(colors.indexOf("Green"));//
+// let data = colors.indexOf(2)
+// console.log(data);
+// if(data == 2){
+//     colors[data] = "Pink"
+// }
+
+// console.log(colors);
+
+// 12. Reverse
+// let nums = [1, 2, 3];
+//  nums.reverse(); 
+//  console.log(nums)
+
+// 13. shift - POP
+
+// let items = [1, 2, 3]; 
+// items.shift(); 
+// console.log(items);
+  
+// // 14. unshift - Push
+// items.unshift(1); 
+// console.log(items);
+
+// let arr = [1,2,3,4,5,6,7,8,9,10];
+// let sum1 = 0;
+// for(let i = 0 ; i < arr.length ; i++){
+//     sum1 =  sum1 + arr[i]
+//     // arr[i] = arr[i] + 1;    
+// }
+// console.log(sum1);
+
+// 15. map
+// let result = arr.map((items)=> {
+//     if(items % 2 === 0){
+//         return items
+//     }
+// });
+// console.log(result);
+
+// 16. filter
+
+// let nums = [1, 2, 3, 4]; 
+// let even = nums.filter(n => n % 2 !== 0); 
+// console.log(even); // [2, 4]
+// console.log(nums);
+
+//  17. Reduce
+
+// let nums = [1, 2, 3, 4]; 
+// let sum = nums.reduce((acc, curr) => acc + curr, 0); 
+// console.log(sum);
+

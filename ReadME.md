@@ -532,3 +532,276 @@ console.log(powerResult); // Output: 8 (2^3)
 let sqrtResult = Math.sqrt(16);
 console.log(sqrtResult); // Output: 4
 ```
+
+## DOM (Document Object Model) manipulation
+
+**📌 What is the DOM?**
+- The DOM (Document Object Model) represents the structure of a web page as a tree of objects.
+- Each HTML element is represented as a node in the DOM tree.
+- JavaScript allows us to manipulate the DOM dynamically by adding, removing, or modifying elements.
+
+**🔹 Accessing Elements in the DOM:** To manipulate elements, we first need to select them using JavaScript.
+
+**1️⃣ Selecting Elements by ID (getElementById):** Returns a single element with the specified id.
+```
+<p id="demo">Hello World</p>
+<script>
+    let element = document.getElementById("demo");
+    console.log(element.textContent); // Output: Hello World
+</script>
+```
+
+**2️⃣ Selecting Elements by Class (getElementsByClassName):**
+Returns a collection (array-like) of elements with the given class.
+```
+<p class="text">First</p>
+<p class="text">Second</p>
+<script>
+    let elements = document.getElementsByClassName("text");
+    console.log(elements[0].textContent); // Output: First
+</script>
+```
+**3️⃣ Selecting Elements by Tag Name (getElementsByTagName)**
+Returns a collection of all elements with the given tag name (e.g., div, p).
+
+```
+<h1>Hello</h1>
+<h1>World</h1>
+<script>
+    let headings = document.getElementsByTagName("h1");
+    console.log(headings[1].textContent); // Output: World
+</script>
+```
+
+**4️⃣ Selecting Elements Using Query Selectors (querySelector & querySelectorAll)**
+- **querySelector(selector) →** Returns the first matching element.
+- **querySelectorAll(selector) →** Returns a NodeList of all matching elements.
+```
+<p class="text">First</p>
+<p class="text">Second</p>
+<script>
+    let firstElement = document.querySelector(".text");
+    console.log(firstElement.textContent); // Output: First
+
+    let allElements = document.querySelectorAll(".text");
+    console.log(allElements.length); // Output: 2
+</script>
+```
+
+**🔹 Modifying DOM Elements**
+- Once an element is selected, we can change its content, styles, and attributes.
+
+**1️⃣ Changing Text Content (textContent & innerHTML)**
+- textContent → Changes only the text inside an element.
+- innerHTML → Changes text and HTML inside an element.
+```
+<p id="demo">Old Text</p>
+<script>
+    let element = document.getElementById("demo");
+    element.textContent = "New Text";
+    // OR
+    element.innerHTML = "<strong>New Text</strong>";
+</script>
+```
+
+**2️⃣ Changing CSS Styles (style Property)**
+- We can modify an element's CSS properties using JavaScript.
+```
+<p id="demo">Styled Text</p>
+<script>
+    let element = document.getElementById("demo");
+    element.style.color = "red";
+    element.style.fontSize = "20px";
+</script>
+```
+
+**3️⃣ Changing Attributes (setAttribute & getAttribute)**
+- setAttribute(name, value) → Changes an attribute value.
+- getAttribute(name) → Gets an attribute value.
+```
+<img id="myImage" src="old.png" />
+<script>
+    let img = document.getElementById("myImage");
+    img.setAttribute("src", "new.png"); // Change image source
+    console.log(img.getAttribute("src")); // Output: new.png
+</script>
+```
+
+**🔹 Handling Events in JavaScript**
+- Events can be handled using different methods:
+
+**1️⃣ Handling Click Events**
+```
+<button id="clickBtn">Click Me</button>
+
+<script>
+    document.getElementById("clickBtn").addEventListener("click", function() {
+        alert("Button Clicked!");
+    });
+</script>
+```
+
+**2️⃣ Handling Mouse Events**
+```
+<div id="box" style="width: 200px; height: 100px; background: lightblue;"></div>
+
+<script>
+    let box = document.getElementById("box");
+
+    box.addEventListener("mouseover", function() {
+        box.style.background = "yellow";
+    });
+
+    box.addEventListener("mouseout", function() {
+        box.style.background = "lightblue";
+    });
+</script>
+```
+
+### setTimeout & setInterval
+**1. setTimeout:** setTimeout is a function that executes a function or evaluates an expression after a specified delay (in milliseconds).
+- **Uses:** It's commonly used for delaying execution of code, creating animations, handling asynchronous operations, etc.
+- **Ex:**
+```
+// Example of setTimeout
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Delayed message after 2 seconds");
+}, 2000); // 2000 milliseconds = 2 seconds
+
+console.log("End");
+```
+
+**2. setInterval:** setInterval is a function that repeatedly calls a function or executes a code snippet with a fixed time delay between each call.
+- **Uses:** It's used for repetitive tasks like animations, periodic updates, or polling in real-time applications.
+- **Ex**
+```
+// Example of setInterval
+let count = 0;
+const intervalId = setInterval(() => {
+    count++;
+    console.log(`Interval ${count}: Executed every 1 second`);
+    if (count === 5) {
+        clearInterval(intervalId); // Stops the interval after 5 executions
+    }
+}, 1000); // 1000 milliseconds = 1 second
+```
+**3. clearTimeout:** clearTimeout() is a method used to cancel a timeout that was previously set using setTimeout().
+- If clearTimeout() is called before the delay completes, the scheduled function will not execute.
+- **Ex:**
+```
+<button id="start">Start Timer</button>
+<button id="cancel">Cancel Timer</button>
+
+<script>
+let timeoutId;
+
+document.getElementById("start").addEventListener("click", () => {
+    timeoutId = setTimeout(() => {
+        alert("Hello after 5 seconds!");
+    }, 5000);
+});
+
+document.getElementById("cancel").addEventListener("click", () => {
+    clearTimeout(timeoutId);
+    alert("Timer cancelled!");
+});
+</script>
+```
+
+## Asynchronous JavaScript
+- **Asynchronous:** In JavaScript, asynchronous means that some tasks can run in the background while the rest of the code continues to execute. JavaScript is single-threaded, so it uses asynchronous behavior to handle tasks like:
+  + API calls
+  + Timers (setTimeout, setInterval)
+  + File loading
+  + User interactions
+
+- **Synchronous Ex:** 
+```
+console.log("Start");
+for (let i = 0; i < 1000000000; i++) {} // time-consuming loop
+console.log("End");
+
+```
+- **Asynchronous Ex:**
+```
+console.log("Start");
+
+setTimeout(() => {
+  console.log("This runs after 2 seconds");
+}, 2000);
+
+console.log("End");
+```
+- **How Asynchronous Code Works in JavaScript**
+  - JavaScript uses the Event Loop, Callback Queue, and Web APIs to handle asynchronous operations.
+- **Common Ways to Handle Asynchronous Code**  
+**1. Using Async/Await**  
+**2. Using Callbacks**  
+**3. Using Promises**  
+
+### 1. Async Await
+- An async keyword will be added to a function when you want that function to platform in an asynchronous way in JS.
+- For this asynchronous behavior we have to write the await keyword in the line where we want the code to hold.
+- **Note:** If the async keyword is not added in the function then we cannot write await in the function.
+- **Ex:**
+```
+// Function that returns a promise after a timeout
+function resolvePromise(alpha, timeout) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(alpha);
+            resolve("Promise is Resolved Successfully...");
+        }, timeout);
+    });
+}
+
+// Async function to display vowels in order with delay
+async function vowelAlpha() {
+    await resolvePromise('A', 2000); // Waits for 2 seconds
+    await resolvePromise('E', 3000); // Waits for 3 seconds
+    await resolvePromise('I', 4000); // Waits for 4 seconds
+    await resolvePromise('O', 2000); // Waits for 2 seconds
+    await resolvePromise('U', 7000); // Waits for 7 seconds
+}
+
+// Start the async process
+vowelAlpha();
+```
+### 2. Callback
+
+
+- **Important Points about Callbacks**  
+  - Functions are first-class citizens in JavaScript — they can be passed as values.
+  - Callbacks can be synchronous or asynchronous.
+  - Callback Hell: Nesting too many callbacks leads to unreadable code.
+```
+function fetchData(callback) {
+    setTimeout(() => {
+        console.log("Data fetched");
+        callback();
+    }, 2000);
+}
+
+fetchData(() => {
+    console.log("Callback function executed");
+});
+```
+
+### 3. Promises
+
+```
+function fetchData() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Data fetched");
+            resolve("Success");
+        }, 2000);
+    });
+}
+
+fetchData().then((message) => {
+    console.log("Then block:", message);
+});
+```
