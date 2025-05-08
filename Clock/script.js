@@ -8,7 +8,7 @@ function showTime(){
         let date = new Date();
 
         if(date.getHours() >= 12){
-            head[0].textContent = `date.getHours() - 12`;
+            head[0].textContent = `${date.getHours() - 12}`;
             head[3].innerHTML = ` PM`
         }else if(date.getHours() < 10){
             head[0].textContent = `0${date.getHours()}`;
@@ -21,7 +21,7 @@ function showTime(){
 }
 
 // start clock
-btn[0].addEventListener('click', () => {
+btn[0].addEventListener('mouseover', () => {
     if(!intervalId){
       intervalId = setInterval(() => {
         showTime()
@@ -30,7 +30,7 @@ btn[0].addEventListener('click', () => {
 })
 
 // stop clock
-btn[1].addEventListener('click', () => {
+btn[1].addEventListener('mouseout', () => {
     clearInterval(intervalId);
     intervalId = null;
 })

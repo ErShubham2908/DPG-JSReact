@@ -513,11 +513,51 @@ function* numberGenerator() {
   
   // output.innerHTML += `<p><strong>KeyUp:</strong> ${event.key}</p>`;
 // });
-let data = document.getElementById("myInput");
-let para = document.getElementById("para")
-let btn = document.querySelector("button");
 
-btn.addEventListener('click', ()=>{
-  para.textContent = `${data.value}`
-  console.log(data.value);
-})
+// Event in JavaScript
+
+// 1. click event
+// 2. mouseover event
+// 3. mouseout event
+// 4. keydown
+// 5. keyup
+
+// let data = document.getElementById("myInput");
+// let para = document.getElementById("para")
+// let btn = document.querySelector("button");
+
+// btn.addEventListener('click', ()=>{
+//   para.textContent = `${data.value}`
+//   console.log(data.value);
+// })
+
+// setTimeout & setInterval
+
+
+
+// Date time method
+// function getTime(){
+//   let date = new Date();
+
+// // console.log(date);
+//   let hrs = date.getHours();
+//   let mins = date.getMinutes();
+//   let secs = date.getSeconds();
+//   console.log(`${hrs}: ${mins} : ${secs}`);
+// }
+
+// let count = 0;
+// setInterval(() => {
+//   getTime();
+// }, 1000)
+
+setTimeout(() => {
+  console.log("Hello");
+  
+}, 0);
+
+console.log("hi");
+console.log("hi2");
+console.log("hi3");
+
+// event loop
