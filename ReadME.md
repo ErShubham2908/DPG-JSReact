@@ -462,7 +462,7 @@ function sayHello() {
 
 ### Object
 - Represents a collection of key-value pairs (properties and methods).
-- **Object Method:**
+- **Object of Method:**
   - **Object.value():** Returns an array of a given object's own enumerable property values.
 ```
 let person = {
@@ -470,7 +470,7 @@ let person = {
   age: 25,
   city: "New York"
 };
-console.log(Object.keys(person));
+console.log(Object.value(person));
 ```
   - **Object.keys():**  Returns an array of a given object's own enumerable property names.
 ```
@@ -479,7 +479,7 @@ let person = {
   age: 25,
   city: "New York"
 };
-console.log(Object.values(person)); 
+console.log(Object.keys(person)); 
 ```
   - **Object.assign():** Copies the values of all enumerable own properties from one or more source objects to a target object.
 ```
@@ -709,6 +709,23 @@ document.getElementById("cancel").addEventListener("click", () => {
 });
 </script>
 ```
+
+### Date and time 
+- The Date object in JavaScript is used to work with dates and times. It allows you to create, retrieve, and manipulate dates and times.
+- **Ex** `let now = new Date();`
+- This will create a Date object with the current date and time.
+
+- **Important method of Date**
+let today = new Date();
+1. today.getFullYear();     // 🔹 Returns year (e.g., 2025)
+2. today.getMonth();        // 🔹 Returns month (0-11), so January = 0
+3. today.getDate();         // 🔹 Day of the month (1-31)
+4. today.getDay();          // 🔹 Day of week (0-6) -> Sunday = 0
+5. today.getHours();        // 🔹 Hour (0-23)
+6. today.getMinutes();      // 🔹 Minutes (0-59)
+7. today.getSeconds();      // 🔹 Seconds (0-59)
+8. today.getMilliseconds(); // 🔹 Milliseconds (0-999)
+
 
 ## Asynchronous JavaScript
 - **Asynchronous:** In JavaScript, asynchronous means that some tasks can run in the background while the rest of the code continues to execute. JavaScript is single-threaded, so it uses asynchronous behavior to handle tasks like:

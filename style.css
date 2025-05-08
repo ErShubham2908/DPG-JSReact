@@ -1,0 +1,38 @@
+/* h1{
+    background-color: cyan;
+} */
+/* 1. universal selector (*) */
+/* 2. group selector */
+/* 3. Tag selector */
+/* 4. class Selector (.) */
+/* 5. id selector (#) */
+
+
+/* 1. universal selector */
+/* *{
+    background-color: red;
+    margin: 0;
+    padding: 0;
+} */
+
+/* 2. group selector */
+/* h1, h2, h3{
+    background-color: red;
+} */
+
+/* 3. tag selector */
+
+/* h4{
+    background-color: cyan;
+} */
+
+/* class selector */
+
+/* .heading5{
+    font-size: 32px;
+}
+
+#heading6{
+    color: blue;
+    font-size: 30px;
+} */

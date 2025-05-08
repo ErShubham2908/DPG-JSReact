@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent{
+    width: 70%;
+    height: 30vh;
+    margin: 13rem auto ;
+    border: 1px solid red;
+    display: grid;
+    place-items: center;
+}
+
+.parent h1 span{
+    font-size: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.child_btn button{
+    width: 10em;
+    height: 3em;
+    border-radius: .4em;
+    background-color: aqua;
+    color: black;
+    border: none;
+    margin-left: 3em;
+    transition: color ease-in-out .5s, background-color 0.5s ease-in-out;
+}
+
+.child_btn button:hover{
+    background-color: black;
+    color: cyan;
+}

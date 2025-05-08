@@ -396,3 +396,128 @@ function* numberGenerator() {
 // let sum = nums.reduce((acc, curr) => acc + curr, 0); 
 // console.log(sum);
 
+// Object  -0 Way 1
+
+// const Obj = {
+//   name: "Abc",
+//   age: 25
+// }
+
+// Way 2 using constructor
+
+// const obj1 = new Object();
+
+// 1. Value()
+// let person = {
+//   name: "Alice",
+//   age: 25,
+//   city: "New York"
+// };
+// console.log(Object.values(person)); // Alice 25 New York
+
+// 2. keys
+
+// console.log(Object.keys(person));
+
+// assign
+
+// let additionalInfo = { 
+//   country: "IN", 
+//   married: false 
+// };
+// let updatedPerson = Object.assign({}, person, additionalInfo);
+
+// console.log("UpdatedPerson",updatedPerson);
+
+
+// Math Method
+
+// 1. Round()
+
+// let number = 3.7
+// console.log(Math.round(number));
+
+// 2. Random
+
+// let RandomNumber = Math.random() * 10;
+// console.log(RandomNumber);
+
+// floor
+
+// console.log(Math.floor(3.9));
+
+// ceil
+
+// console.log(Math.ceil(3.3));
+
+// pow - Power
+// let num1 = 10;
+// console.log(Math.pow(num1, 2 ));
+
+// sqrt
+
+// console.log(Math.sqrt(num1));
+
+
+// JS Selector
+
+// getElementById
+
+// let para = document.getElementById("basic");
+// para.style.color = "red"
+// console.log(para);
+
+// getElementsByClassName
+
+// let head = document.getElementsByClassName('replaceOne')
+// console.log(head);
+// head[1].style.color = "red"
+// head[3].style.fontSize = "32px"
+// head[2].textContent = "Hey!!! How are you?"
+
+// getElementsByTagName
+// let tagNameData = document.getElementsByTagName('h1');
+// console.log(tagNameData);
+
+// querySelector & querySelectorAll
+// let a = document.querySelector("#basic")
+// let b = document.querySelector(".replaceOne")
+// let c = document.querySelector("h1")
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// 
+
+
+// const input = document.getElementById("myInput");
+// const output = document.getElementById("output");
+
+// // Keydown: fires when the key is pressed down
+// input.addEventListener("keydown", function (event) {
+//   // output.innerHTML += `<p><strong>KeyDown:</strong> ${event.key}</p>`;
+// });
+
+// // Keypress: fires when a character-producing key is pressed (Deprecated)
+// input.addEventListener("keypress", function (event) {
+//   // output.innerHTML += `<p><strong>KeyPress:</strong> ${event.key}</p>`;
+// });
+
+// // Keyup: fires when the key is released
+// let str = ""
+// input.addEventListener("keyup", function (event) {
+//   // console.log(event.key);
+//   str += event.key
+//   console.log(str);
+  
+  // output.innerHTML += `<p><strong>KeyUp:</strong> ${event.key}</p>`;
+// });
+let data = document.getElementById("myInput");
+let para = document.getElementById("para")
+let btn = document.querySelector("button");
+
+btn.addEventListener('click', ()=>{
+  para.textContent = `${data.value}`
+  console.log(data.value);
+})
