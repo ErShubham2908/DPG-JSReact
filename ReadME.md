@@ -787,8 +787,6 @@ async function vowelAlpha() {
 vowelAlpha();
 ```
 ### 2. Callback
-
-
 - **Important Points about Callbacks**  
   - Functions are first-class citizens in JavaScript — they can be passed as values.
   - Callbacks can be synchronous or asynchronous.
@@ -799,7 +797,7 @@ function fetchData(callback) {
         console.log("Data fetched");
         callback();
     }, 2000);
-}
+} 
 
 fetchData(() => {
     console.log("Callback function executed");
@@ -807,8 +805,52 @@ fetchData(() => {
 ```
 
 ### 3. Promises
+- A Promise in JavaScript is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+- It provides a cleaner alternative to callback functions, especially when handling multiple asynchronous operations.
+
+- **States of a Promise:**
+1. Pending – Initial state, neither fulfilled nor rejected.
+2. Fulfilled – The operation completed successfully.
+3. Rejected – The operation failed.
+
+- **Common Methods:**
+1. .then() – Handles the resolved value.
+2. .catch() – Handles the rejected error.
+3. .finally() – Executes code after the promise is settled (fulfilled or rejected). [optional]
+
+-  **Uses of Promises:**
+- Fetching data from APIs (e.g., using fetch()).
+- Handling file operations in Node.js.
+- Performing asynchronous operations without blocking the main thread.
+- Chaining multiple async tasks in a readable way.
+
+- **Benefits of Promises:**
+- Better readability of asynchronous code.
+- Avoid callback hell (deeply nested callbacks).
+- Error propagation using .catch() makes debugging easier.
+- Promises allow chaining operations in a sequential manner.
+- Work well with modern APIs and frameworks
+
 
 ```
+Ex - 1
+function handlePromise(nums){
+    return new Promise((resolve, reject) => {
+        if(nums % 2 === 0){
+            resolve("Number is Even")
+        }else{
+            reject("Number is Odd")
+        }
+    })
+}
+
+handlePromise(13).then((data) => {
+    console.log(data)
+}).catch((err) => {
+    console.log(err)
+})
+
+Ex - 2
 function fetchData() {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -822,3 +864,243 @@ fetchData().then((message) => {
     console.log("Then block:", message);
 });
 ```
+
+# React JS
+**What is React JS?**  
+React.js is a JavaScript library used for building user interfaces (UI), particularly for **single-page applications (SPAs).** It allows developers to create fast, interactive, and reusable UI components efficiently. React was developed by Facebook (now Meta) and is maintained by Meta and an open-source community.
+
+**1. Features of React.js**:  
+- **Component-Based:** React is based on a component-based architecture where UIs are composed of independent and reusable components.  
+- **Virtual DOM:** React uses a virtual DOM to optimize rendering by selectively updating only the parts of the actual DOM that have changed.  
+- **JSX:** JSX is a syntax extension for JavaScript which allows HTML to be written within JavaScript code.  
+- **Unidirectional Data Flow:** Data flows in one direction, which simplifies debugging and understanding of how data changes over time.  
+- **React Hooks:** Introduced in React 16.8, hooks allow functional components to use state and lifecycle features previously available only in class components.
+
+**2. Advantages of React.js:**
+- **Reusability:** Components are modular and can be reused across the application, reducing redundancy and development time.
+- **Virtual DOM:** Enhances performance by minimizing DOM updates and improving application responsiveness.
+- **JSX**: Provides a concise and readable syntax for defining UI components within JavaScript code.
+- **Community and Ecosystem:** React has a large and active community with extensive documentation, libraries (like Redux for state management), and tools (like React Developer Tools).
+- **SEO-Friendly:** React can be made SEO-friendly with server-side rendering (SSR) or static site generation (SSG) using frameworks like Next.js.
+
+**3. Disadvantages of React.js:**
+- **Complexity:** React's ecosystem and syntax can be overwhelming for beginners, especially with frequent updates and new features.
+- **Learning** Curve: Understanding concepts like JSX, virtual DOM, and component lifecycle methods may require time and effort.
+- **Tooling:** Setting up a React project with the right build tools (like Babel and webpack) can be complex compared to simpler frameworks.
+Poor Documentation for Latest Features: Occasionally, new features and updates may lack comprehensive documentation or examples initially.
+- **View Part Only**: React is a library for building user interfaces and does not provide built-in solutions for other aspects like routing and global state management (though these can be handled with additional libraries).
+
+### React installation process
+
+**There are 3 main ways to install and start working with React in a project**  
+
+**1. Using Create React App (CRA) – Recommended for beginners**
+- **Step:**
+  - **Install Node.js and npm**
+    - ownload and install from: https://nodejs.org
+    - Verify installation: `node -v and npm -v`
+  - **Use Create React App tool**
+    - `npx create-react-app my-app`
+  - **Navigate into your project folder**
+    - `cd my-app`
+  - **Start the development server**
+    - `npm start`
+**2. Installing React with Vite**
+- **Prerequisites**
+  - Install Node.js (v14+) from https://nodejs.org
+  - Verify installation:
+    - `node -v amd npm -v`
+  - Create a React + Vite Project
+    - `npm create vite@latest my-vite-app`
+    - Project name (or press Enter to accept default)
+    - Framework: React
+    - Variant: JavaScript or TypeScript
+  - **Go into the project folder**
+    - `cd my-vite-app`
+  - **Install dependencies**
+    - `npm install`
+  - **Start the development server**
+    - `npm run dev`
+
+- **Advantages of Using Vite**
+  - Super fast dev server & hot reload
+  - Smaller, optimized build
+  - Supports TypeScript, JSX, and modern features
+  - Easy plugin system
+
+### 📁 React Project Folder Structure (Create React App)
+**1. node_modules/**
+- Contains all installed npm packages and dependencies.
+- Auto-managed by npm; you should not edit files here.
+- This folder is created by running npm install.
+
+**2. public/**
+- This folder contains static files that are publicly accessible.
+- **Key Files:**
+  - **index.html**
+    - The main HTML file.
+    - React mounts your app into the `<div id="root"></div>` inside this file.
+  - **favicon.ico**
+    - The small icon shown in the browser tab.
+  - **manifest.json**
+    - Provides metadata for Progressive Web Apps (PWA).
+  - Other assets (like images) can also be placed here.
+  - **Note:** Files in public/ are not processed by Webpack (no minification, transpilation).
+
+**3. src/ (Main coding folder)**
+- This is where all React code lives, including components, CSS, and logic.
+- **Key Files & Folders:**
+  - **index.js**
+    - Entry point of the app.
+    - Renders the root component `(<App />)` into the DOM.
+    - **Common Code:** 
+```
+                import React from 'react';
+                import ReactDOM from 'react-dom';
+                import App from './App';
+                ReactDOM.render(<App />, document.getElementById('root'));
+```
+  - **App.js**
+    - Root React component.
+    - Contains your base JSX structure.
+  - **App.css**
+    - Styles for App.js.
+  - **index.css**
+    - Global styles for the entire app.
+  - **reportWebVitals.js**
+    - Used for measuring performance (optional).
+  - **setupTests.js**
+    - Used for configuring testing libraries like Jest.
+
+**4. Typical Custom Folders You Can Add in src/:**
+- **✅ components/**
+  - Contains reusable UI components (buttons, headers, forms).
+  - **Example:** Header.js, Footer.js, Card.js
+
+- **✅ pages/**
+  - Each file is a page or screen (useful with React Router).
+  - Example: Home.js, About.js, Contact.js
+
+- **✅ assets/**
+  - Contains images, icons, fonts, etc.
+  - Subfolders like images/, icons/, fonts/.
+
+- **✅ styles/ or css/**
+  - Contains global or modular CSS files.
+
+- **✅ hooks/**
+  - For custom React Hooks (e.g., useFetch.js)
+
+
+**5. .gitignore**
+- Lists files/folders to be ignored by Git (e.g., node_modules/).
+
+**6. package.json**
+- Lists project metadata, scripts, and dependencies.
+- **Important scripts:**
+  - **npm start:** Run development server
+  - **npm run build:** Create production build
+
+**7. package-lock.json**
+- Auto-generated file that locks dependency versions.
+
+**8. README.md**
+- Markdown file explaining the project.
+- Good for documentation and GitHub preview.
+
+**9. Optional (Advanced Projects):**
+- env files (.env, .env.production, etc.): For storing environment variables.
+- tests/: For unit/integration tests.
+
+
+### Virtual-DOM
+
+**What is the Virtual DOM?**
+- The Virtual DOM (Document Object Model) is a lightweight copy of the real DOM.
+- It's a concept implemented by React to optimize how changes are reflected in the browser.
+
+**1. Why Virtual DOM?**
+- Updating the real DOM is slow and inefficient because of its direct interaction with the browser.
+- Virtual DOM acts as a layer between React components and the actual DOM, making updates faster.
+
+**2. How Virtual DOM Works:**
+- Render Virtual DOM: When a React component renders, it creates a tree of JavaScript objects representing the component's rendered UI.
+- Diffing: When state or props change, React creates a new Virtual DOM tree.
+- Reconciliation: React then compares the new Virtual DOM with the previous one (diffing), identifying the minimal set of changes needed to update the real DOM.
+- Updates: Only the parts of the real DOM that need to change are updated, which is more efficient than re-rendering the entire DOM.
+
+**3. Key Benefits of Virtual DOM:**
+- Performance: Minimizes DOM updates, leading to faster rendering and better user experience.
+- Developer Friendly: Simplifies development by abstracting away direct DOM manipulation.
+- Cross-Platform Consistency: Ensures consistent behavior across different browsers and environments.
+
+**4. Virtual DOM vs. Real DOM:**
+- Real DOM: Directly interacts with the browser, updates are slow and costly.
+- Virtual DOM: Lightweight representation in memory, updates are fast due to batch processing and efficient diffing algorithms.
+
+**5. Implementation Details:**
+- React maintains a reconciler that handles the Virtual DOM operations.
+- Developers work with React components, which are declarative and define how the UI should look based on state and props.
+- React's diffing algorithm (using keys) optimizes updates by minimizing the number of changes to the DOM.
+
+**6. Common Misconceptions:**
+- Virtual DOM is not an alternative to the DOM: It's a strategy to optimize updates to the real DOM.
+- Virtual DOM is not specific to React: Similar concepts exist in other libraries and frameworks aiming for efficient UI updates.
+
+
+## What is JSX?
+**JSX (JavaScript XML)** is a syntax extension of JavaScript that allows you to write HTML-like code inside JavaScript. JSX makes it easier to create and manage UI components in React.
+- const element = `<h1>Hello, World!</h1>;`
+	- Here, `<h1>Hello, World!</h1>` looks like HTML but is actually JavaScript.
+
+Why Use JSX in React?
+JSX provides several advantages in React development. Below are detailed points explaining why JSX is used in React:
+
+**1. Improves Readability & Maintainability**
+- JSX makes the code more readable by allowing HTML-like syntax within JavaScript.
+- It is easier to visualize UI structure in JSX compared to traditional JavaScript-based DOM manipulation.
+
+**2. Allows Writing UI Inside JavaScript**
+- React follows the concept of component-based architecture, where each component contains its own logic and UI.
+- JSX allows you to write UI components inside JavaScript, keeping the UI and logic together.
+
+**3. Easy to Create & Use Components**
+- JSX helps in creating reusable components that return JSX elements.
+```
+Example:
+function Welcome(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+```
+**4. Supports JavaScript Expressions Inside HTML**
+- You can embed JavaScript expressions inside JSX using curly braces {}.
+```
+Example:
+const name = "John";
+const element = <h1>Hello, {name}!</h1>;
+```
+
+**1. Converts JSX to JavaScript (Babel Transpilation)**
+- Browsers don’t understand JSX, so Babel compiles JSX into React.createElement() function calls.
+```
+Example of JSX:
+const element = <h1>Hello, World!</h1>;
+Transpiles to JavaScript:
+const element = React.createElement("h1", null, "Hello, World!");
+```
+- **Performance Optimization:** JSX helps React optimize rendering using Virtual DOM, as it converts JSX into efficient JavaScript code.
+
+
+### Components - Class Components / Function Components
+
+**1. What is a Class Component in React?**
+- A Class Component in React is a JavaScript class that extends React.Component and contains:
+- A render() method that returns JSX (UI elements).
+- A state to manage component data.
+- Lifecycle methods (like componentDidMount, componentDidUpdate, etc.).
+
+**2. Key Features of Class Components:**
+- Stateful: Can hold and manage local state using this.state.
+- Lifecycle Methods: Supports componentDidMount, componentDidUpdate, etc.
+- Requires this Keyword: Methods inside a class component require binding this.
+

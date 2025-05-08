@@ -539,7 +539,7 @@ function* numberGenerator() {
 // function getTime(){
 //   let date = new Date();
 
-// // console.log(date);
+// console.log(date);
 //   let hrs = date.getHours();
 //   let mins = date.getMinutes();
 //   let secs = date.getSeconds();
@@ -551,13 +551,74 @@ function* numberGenerator() {
 //   getTime();
 // }, 1000)
 
-setTimeout(() => {
-  console.log("Hello");
+// setTimeout(() => {
+//   console.log("Hello");
   
-}, 0);
+// }, 0);
 
 console.log("hi");
 console.log("hi2");
 console.log("hi3");
 
 // event loop
+
+// console.log("Start");
+// for (let i = 0; i < 1000000; i++) {console.log(i);
+// } // time-consuming loop
+// console.log("End");
+
+// console.log("Start");
+
+// setTimeout(() => {
+//   console.log("This runs after 2 seconds");
+// }, 2000);
+
+// console.log("End");
+
+// console.log("Start");
+// for(let i = 0 ; i < 1000000 ; i++){
+//   console.log(i);
+// }
+// setTimeout(() => {
+//   console.log("HI");
+// }, 2000);
+
+
+// setInterval(() => {
+//   console.log("Hello");
+// }, 1000);
+
+
+
+// console.log("end");
+
+function resolvePromise(alpha, timeout) {
+  return new Promise((resolve) => {
+      setTimeout(() => {
+          console.log(alpha);
+          resolve("Promise is Resolved Successfully...");
+      }, timeout);
+  });
+}
+
+// Async function to display vowels in order with delay
+async function vowelAlpha() {
+  await resolvePromise('A', 1000); // Waits for 2 seconds
+  await resolvePromise('E', 1000); // Waits for 3 seconds
+  await resolvePromise('I', 1000); // Waits for 4 seconds
+  await resolvePromise('O', 1000); // Waits for 2 seconds
+  await resolvePromise('U', 1000); // Waits for 7 seconds
+}
+// vowelAlpha()
+
+function handlePromise(nums){
+  return new Promise((resolve, reject) => {
+      if(nums % 2 === 0){
+          resolve("Number is Even")
+      }else{
+          reject("Number is Odd")
+      }
+  })
+}
+
+handlePromise(12).then((data) => console.log(data)).catch((err) => console.log(err))

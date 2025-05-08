@@ -21,7 +21,7 @@ function showTime(){
 }
 
 // start clock
-btn[0].addEventListener('mouseover', () => {
+btn[0].addEventListener('click', () => {
     if(!intervalId){
       intervalId = setInterval(() => {
         showTime()
